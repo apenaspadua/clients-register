@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Cadastro de Clientes</string>
+
+    <string name="text_label_register">Cadastrar Cliente</string>
+    <string name="text_label_listboook">Lista de Clientes</string>
+    <string name="text_label_description">Cadastre seus clientes para contatar mais tarde</string>
+
+    <string name="text_title_resgister">Insira os dados do Cliente</string>
+    <string name="text_label_client_list">Lista de Clientes</string>
+
+    <string name="text_name">Nome do Cliente</string>
+    <string name="text_username">Nome de Usuario</string>
+    <string name="text_password">Senha</string>
+    <string name="text_email">Email</string>
+    <string name="text_phone">Telefone</string>
+
+    <string name="text_form_empty">Preencha este campo</string>
+    <string name="text_form_save">Livro adicionado a biblioteca</string>
+    <string name="text_form_failed">Ocorreu um erro ao salvar</string>
+</resources>
