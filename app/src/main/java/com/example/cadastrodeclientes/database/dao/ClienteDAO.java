@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.cadastrodeclientes.model.Cliente;
 
@@ -16,6 +17,9 @@ public interface ClienteDAO {
 
     @Insert
     void insertClients(Cliente... clientes);
+
+    @Update
+    void updateClients(Cliente... clientes);
 
     @Delete
     void deleteClients(Cliente... clientes);

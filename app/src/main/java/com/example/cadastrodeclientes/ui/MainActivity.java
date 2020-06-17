@@ -1,4 +1,4 @@
-package com.example.cadastrodeclientes;
+package com.example.cadastrodeclientes.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.example.cadastrodeclientes.R;
+import com.example.cadastrodeclientes.BaseCreate;
 import com.example.cadastrodeclientes.utils.Utils;
 
-public class MainActivity extends AppCompatActivity implements BaseCreate{
+public class MainActivity extends AppCompatActivity implements BaseCreate {
 
     private RelativeLayout buttonCadastro, buttonLista;
 

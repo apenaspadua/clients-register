@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#121C31</color>
-    <color name="colorPrimaryDark">#121C31</color>
-    <color name="colorAccent">#121C31</color>
+    <color name="colorPrimary">#7159C1</color>
+    <color name="colorPrimaryDark">#7159C1</color>
+    <color name="colorAccent">#7159C1</color>
 
     <color name="text">#242424</color>
     <color name="trasnparent">#00FFFFFF</color>
@@ -10,7 +10,8 @@
     <color name="dark">#C2C2C2</color>
     <color name="white">#fff</color>
     <color name="light_gray">#E9E8E8</color>
-    <color name="buttonRegister">#414A5F</color>
-    <color name="red">#FA1111</color>
+    <color name="buttonRegister">#FFC800</color>
+    <color name="buttonReset">#414A5F</color>
+    <color name="red">#F44336</color>
 
 </resources>

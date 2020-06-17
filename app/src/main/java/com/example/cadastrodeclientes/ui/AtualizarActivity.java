@@ -1,42 +1,40 @@
-package com.example.cadastrodeclientes;
+package com.example.cadastrodeclientes.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.cadastrodeclientes.R;
 import com.example.cadastrodeclientes.application.MyApplication;
+import com.example.cadastrodeclientes.BaseCreate;
 import com.example.cadastrodeclientes.model.Cliente;
 import com.example.cadastrodeclientes.utils.Utils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-public class CadastroActivity extends AppCompatActivity implements BaseCreate {
+public class AtualizarActivity extends AppCompatActivity implements BaseCreate {
 
     private EditText name, username, password, email, phone;
     private TextInputLayout tilName, tilUsername, tilPhone;
     private ImageView back;
-    private Cliente cliente;
-    private FloatingActionButton register, clear;
+    private Cliente cliente, getCliente;
+    private FloatingActionButton update, clear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro);
+        setContentView(R.layout.activity_atualizar);
 
         initInstance();
         initComponents();
+        getDataClient();
 
-        register.setOnClickListener(buttonClickRegister);
+        update.setOnClickListener(buttonClickUpdate);
         clear.setOnClickListener(buttonClickClear);
         back.setOnClickListener(backClick);
     }
@@ -51,25 +49,35 @@ public class CadastroActivity extends AppCompatActivity implements BaseCreate {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         finish();
     }
 
-    private View.OnClickListener buttonClickRegister = new View.OnClickListener() {
+    private View.OnClickListener buttonClickUpdate = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            insertClient();
+            updateClient();
         }
     };
 
     private View.OnClickListener buttonClickClear = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-           cleanFields();
+            cleanFields();
         }
     };
 
-    private void insertClient (){
+    private void getDataClient() {
+        Intent intent = getIntent();
+        getCliente = (Cliente) intent.getSerializableExtra("cliente");
+
+        name.setText(getCliente.getNome());
+        username.setText(getCliente.getNomeUsuario());
+        password.setText(getCliente.getSenha());
+        email.setText(getCliente.getEmail());
+        phone.setText(getCliente.getTelefone());
+    }
+
+    private void updateClient (){
         if (validateForm()) {
             cliente.setNome(name.getText().toString());
             cliente.setNomeUsuario(username.getText().toString());
@@ -77,10 +85,9 @@ public class CadastroActivity extends AppCompatActivity implements BaseCreate {
             cliente.setEmail(email.getText().toString());
             cliente.setTelefone(phone.getText().toString());
 
-            if(((MyApplication) getApplication()).insertClient(cliente)){
-                showMessage(getString(R.string.text_form_save));
-                cleanFields();
-            } else {
+            if(((MyApplication) AtualizarActivity.this.getApplication()).updateClient(cliente)){
+                showMessage(getString(R.string.text_form_update));
+             } else {
                 showMessage(getString(R.string.text_form_failed));
             }
         }
@@ -123,18 +130,19 @@ public class CadastroActivity extends AppCompatActivity implements BaseCreate {
     @Override
     public void initComponents() {
         try {
-            name = findViewById(R.id.nameClient);
-            username = findViewById(R.id.userName);
-            password = findViewById(R.id.password);
-            email = findViewById(R.id.email);
-            phone = findViewById(R.id.phone);
-            tilName = findViewById(R.id.tilName);
-            tilUsername = findViewById(R.id.tilUserName);
-            tilPhone = findViewById(R.id.tilPhone);
-            register = findViewById(R.id.register);
-            clear = findViewById(R.id.clean);
+            name = findViewById(R.id.updateNameClient);
+            username = findViewById(R.id.updateUserName);
+            password = findViewById(R.id.updatePassword);
+            email = findViewById(R.id.updateEmail);
+            phone = findViewById(R.id.updatePhone);
+            tilName = findViewById(R.id.tilUpdateName);
+            tilUsername = findViewById(R.id.tilUpdateUserName);
+            tilPhone = findViewById(R.id.tilUpdatePhone);
+            update = findViewById(R.id.update);
+            clear = findViewById(R.id.cleanUpdate);
             back = findViewById(R.id.back);
             Utils.setPushDownAnimation(back);
+
         } catch (Exception e){
             e.printStackTrace();
         }

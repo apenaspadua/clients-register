@@ -8,6 +8,8 @@
     <string name="text_title_resgister">Insira os dados do Cliente</string>
     <string name="text_label_client_list">Lista de Clientes</string>
 
+    <string name="text_title_update">Atualizar os dados do Cliente</string>
+
     <string name="text_name">Nome do Cliente</string>
     <string name="text_username">Nome de Usuario</string>
     <string name="text_password">Senha</string>
@@ -16,5 +18,8 @@
 
     <string name="text_form_empty">Preencha este campo</string>
     <string name="text_form_save">Cliente adicionado a lista</string>
+    <string name="text_form_update">Cliente atualizado com sucesso</string>
     <string name="text_form_failed">Ocorreu um erro ao salvar</string>
+    <string name="text_delete">Apagar</string>
+    <string name="text_edit">Editar</string>
 </resources>

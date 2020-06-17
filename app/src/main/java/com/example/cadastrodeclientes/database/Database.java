@@ -40,6 +40,11 @@ public abstract class Database extends RoomDatabase implements DatabaseContract 
     }
 
     @Override
+    public void updateClients(Cliente... clientes) {
+        mLocalDatabase.updateClients();
+    }
+
+    @Override
     public void deleteClients(Cliente... clientes) {
         mLocalDatabase.deleteClients();
     }

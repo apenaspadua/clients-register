@@ -1,20 +1,20 @@
-package com.example.cadastrodeclientes;
+package com.example.cadastrodeclientes.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.cadastrodeclientes.R;
 import com.example.cadastrodeclientes.adapter.ListAdapter;
 import com.example.cadastrodeclientes.database.Database;
+import com.example.cadastrodeclientes.BaseCreate;
 import com.example.cadastrodeclientes.model.Cliente;
 import com.example.cadastrodeclientes.utils.Utils;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

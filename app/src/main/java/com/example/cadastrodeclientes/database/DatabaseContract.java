@@ -10,5 +10,6 @@ public interface DatabaseContract {
 
     Flowable<List<Cliente>> getAllClients();
     void deleteClients(Cliente... clientes);
+    void updateClients(Cliente... clientes);
     void insertClients(Cliente... clientes);
 }

@@ -34,6 +34,15 @@ public class MyApplication extends Application {
         }
     }
 
+    public boolean updateClient(final Cliente cliente){
+        try {
+            db.clientDao().updateClients(cliente);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public boolean deleteClient(final Cliente cliente){
         try {
             db.clientDao().deleteClients(cliente);
